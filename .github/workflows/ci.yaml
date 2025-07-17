@@ -22,7 +22,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd Dockerpython
           pip install -r requirements.txt
 
       - name: Run unit tests
@@ -33,5 +32,4 @@ jobs:
 
       - name: Build Docker image
         run: |
-          cd Dockerpython
           docker build -t orders-service .
