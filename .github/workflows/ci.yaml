@@ -22,16 +22,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd Dockerpython
           pip install -r requirements.txt
 
       - name: Run unit tests
+        env:
+          PYTHONPATH: .
         run: |
-          cd microservice/orders-service
-          pytest
+          pytest tests/
           
 
       - name: Build Docker image
         run: |
-          cd Dockerpython
           docker build -t orders-service .
