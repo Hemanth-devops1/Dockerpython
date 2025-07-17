@@ -1,7 +1,7 @@
 from app import app
 
-def test_home():
-    tester = app.test_client()
-    response = tester.get('/')
+def test_hello():
+    client = app.test_client()
+    response = client.get('/')
     assert response.status_code == 200
-    assert b'Hello from Flask in Docker!' in response.data
+    assert response.data == b'Hello from Flask in Docker!'
