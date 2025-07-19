@@ -11,7 +11,7 @@ COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose port 80 so ECS/ALB knows
-EXPOSE 80  # 🔥 Add this line
+EXPOSE 80 
 
 # Run the app
 CMD ["python", "app.py"]
