@@ -59,7 +59,7 @@ jobs:
           echo '[{"name":"flask-container","imageUri":"'"$IMAGE_URI"'"}]' > imagedefinitions.json
 
       - name: Upload imagedefinitions.json
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: image-definitions
           path: imagedefinitions.json
