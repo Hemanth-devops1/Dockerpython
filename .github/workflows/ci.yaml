@@ -52,14 +52,4 @@ jobs:
           IMAGE_URI=$ACCOUNT_ID.dkr.ecr.${AWS_REGION}.amazonaws.com/${ECR_REPOSITORY}:$IMAGE_TAG
 
           docker build -t $IMAGE_URI .
-          docker push $IMAGE_URI
-
-      - name: Create imagedefinitions.json
-        run: |
-          echo '[{"name":"flask-container","imageUri":"'"$IMAGE_URI"'"}]' > imagedefinitions.json
-
-      - name: Upload imagedefinitions.json to S3
-        run: aws s3 cp imagedefinitions.json s3://codepipeline-us-east-1-1e0d10401bde-4476-8c3f-e7973eb51401/my-first-pipeline/SourceArti/imagedefinitions.json
-
-
-   
+          docker push $IMAGE_URI  
