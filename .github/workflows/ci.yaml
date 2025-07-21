@@ -59,7 +59,7 @@ jobs:
           echo '[{"name":"flask-container","imageUri":"'"$IMAGE_URI"'"}]' > imagedefinitions.json
 
       - name: Upload imagedefinitions.json to S3
-        run: |
-          aws s3 cp imagedefinitions.json s3://${{ secrets.S3_BUCKET }}/imagedefinitions.json
+        run: aws s3 cp imagedefinitions.json s3://codepipeline-us-east-1-1e0d10401bde-4476-8c3f-e7973eb51401/my-first-pipeline/SourceArti/imagedefinitions.json
+
 
    
